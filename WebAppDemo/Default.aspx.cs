@@ -23,8 +23,10 @@ namespace WebAppDemo
         protected void SubmitEventMethod(object sender, EventArgs e)
         {
             /*
-             *  Custom Developer Check for sql Injection
              * 
+             * Checks if a user tries to do sql injection for input form
+             * 
+             */
             if(checkAgainstWhiteList(usernameTextBox.Text) == true && 
                 checkAgainstWhiteList(passwordTextBox.Text) == true)
             {
@@ -35,10 +37,6 @@ namespace WebAppDemo
             {
                 passwordTextBox.Text = "Wadu Hek!";
             }
-            */
-
-            //
-            DoSQLQuery();
         }
 
         //Check to see if user input is valid
