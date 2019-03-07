@@ -12,10 +12,10 @@
     <form id="form1" runat="server">
         <div>
             <div class="form-group">
-                <asp:TextBox ID="usernameTextBox" Text="Username" runat="server" />
+                <asp:TextBox ID="usernameTextBox" Placeholder="Username" runat="server" />
             </div>
             <div class="form-group">
-                <asp:TextBox ID="passwordTextBox" Text="Password" runat="server" />
+                <asp:TextBox ID="passwordTextBox" Placeholder="Password" runat="server" />
             </div>
             <div class="form-group">
                 <asp:Button ID="submitButton" Text="Log in" runat="server" OnClick="SubmitEventMethod"/>
