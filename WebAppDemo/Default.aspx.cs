@@ -22,8 +22,34 @@ namespace WebAppDemo
         }
         protected void SubmitEventMethod(object sender, EventArgs e)
         {
-            DoSQLQuery();
+
+            if(checkAgainstWhiteList(usernameTextBox.Text) == true && 
+                checkAgainstWhiteList(passwordTextBox.Text) == true)
+            {
+                DoSQLQuery();
+            }
+
+            else
+            {
+                passwordTextBox.Text = "Wadu Hek!";
+            }
         }
+
+        //Check to see if user input is valid
+        private bool checkAgainstWhiteList(String userInput)
+        {
+            var regExpression = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z0-9]*$");
+
+            if(regExpression.IsMatch(userInput))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         //Actual query
         private void DoSQLQuery()
         {
