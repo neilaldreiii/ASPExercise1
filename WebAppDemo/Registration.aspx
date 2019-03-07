@@ -12,25 +12,25 @@
     <form id="form1" runat="server">
         <div>
             <div class="form-group">
-                <asp:TextBox ID="FirstnameTextBox" Text="First Name" runat="server" />
+                <asp:TextBox ID="FirstnameTextBox" Placeholder="First Name" runat="server" />
             </div>
             <div class="form-group">
-                <asp:TextBox ID="MiddlenameTextBox" Text="Middle Name" runat="server" />
+                <asp:TextBox ID="MiddlenameTextBox" Placeholder="Middle Name" runat="server" />
             </div>
             <div class="form-group">
-                <asp:TextBox ID="LastnameTextBox" Text="Last Name" runat="server" />
+                <asp:TextBox ID="LastnameTextBox" Placeholder="Last Name" runat="server" />
             </div>
             <div class="form-group">
-                <asp:TextBox ID="EmailTextBox" Text="Email" runat="server" />
+                <asp:TextBox ID="EmailTextBox" Placeholder="Email" runat="server" />
             </div>
             <div class="form-group">
-                <asp:TextBox ID="PhonenumberTextBox" Text="Phone Number" runat="server" />
+                <asp:TextBox ID="PhonenumberTextBox" Placeholder="Phone Number" runat="server" />
             </div>
             <div class="form-group">
-                <asp:TextBox ID="UsernameTextBox" Text="Username" runat="server" />
+                <asp:TextBox ID="UsernameTextBox" Placeholder="Username" runat="server" />
             </div>
             <div class="form-group">
-                <asp:TextBox ID="PasswordTextBox" Text="Password" runat="server" />
+                <asp:TextBox ID="PasswordTextBox" Placeholder="Password" runat="server" />
             </div>
             <asp:Button ID="RegisterButton" Text="Save" runat="server" OnClick="registerEventMethod" />
         </div>

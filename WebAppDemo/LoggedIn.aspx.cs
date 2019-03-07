@@ -9,9 +9,11 @@ namespace WebAppDemo
 {
     public partial class LoggedIn : System.Web.UI.Page
     {
+        String name;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            name = (String)(Session["uname"]);
+            userLabel.Text = name;
         }
     }
 }

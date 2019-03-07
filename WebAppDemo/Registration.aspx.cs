@@ -24,20 +24,20 @@ namespace WebAppDemo
         }
         private void registerUser()
         {
-            string connString = System.Configuration.ConfigurationManager.ConnectionStrings["webconfigstring"].ToString();
+            string connString = System.Configuration.ConfigurationManager.ConnectionStrings["WebAppConnString"].ToString();
 
             conn = new MySql.Data.MySqlClient.MySqlConnection(connString);
             conn.Open();
             queryStr = "";
 
-            queryStr = "INSERT INTO `webappdemo.userregistration` " +
+            queryStr = "INSERT INTO `userregistration` " +
                 "(firstname, middlename, lastname, email, phonenumber, username, password)" +
                 "VALUES ('" + FirstnameTextBox.Text + "', '" + MiddlenameTextBox.Text + "', '" + LastnameTextBox.Text + "','" + EmailTextBox.Text + "','" + PhonenumberTextBox.Text + "','" + UsernameTextBox.Text + "', '" + PasswordTextBox.Text +"')";
 
             cmd = new MySql.Data.MySqlClient.MySqlCommand(queryStr, conn);
             cmd.ExecuteReader();
-
             conn.Close();
+            Response.Redirect("Default.aspx");
         }
     }
 }
