@@ -13,7 +13,24 @@ namespace WebAppDemo
         protected void Page_Load(object sender, EventArgs e)
         {
             name = (String)(Session["uname"]);
-            userLabel.Text = name;
+            if(name == null)
+            {
+                Response.BufferOutput = true;
+                Response.Redirect("Default.aspx", false);
+            }
+            else
+            {
+                userLabel.Text = name;
+            }
+
+        }
+
+        protected void LogOutButton_Click(object sender, EventArgs e)
+        {
+            Session["uname"] = null;
+            Session.Abandon();
+            Response.BufferOutput = true;
+            Response.Redirect("Default.aspx", false);
         }
     }
 }

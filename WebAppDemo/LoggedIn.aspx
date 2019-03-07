@@ -10,6 +10,7 @@
     <h1>Hello this is the logged in page for bananas</h1>
     <form id="form1" runat="server">
         <div>
+            <asp:Button ID="LogOutButton" text="Logout" OnClick="LogOutButton_Click" runat="server"/>
             <h1>Hey there <asp:Label ID="userLabel" runat="server" /></h1>
         </div>
     </form>
