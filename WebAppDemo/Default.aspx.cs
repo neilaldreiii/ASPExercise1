@@ -22,7 +22,9 @@ namespace WebAppDemo
         }
         protected void SubmitEventMethod(object sender, EventArgs e)
         {
-
+            /*
+             *  Custom Developer Check for sql Injection
+             * 
             if(checkAgainstWhiteList(usernameTextBox.Text) == true && 
                 checkAgainstWhiteList(passwordTextBox.Text) == true)
             {
@@ -33,6 +35,10 @@ namespace WebAppDemo
             {
                 passwordTextBox.Text = "Wadu Hek!";
             }
+            */
+
+            //
+            DoSQLQuery();
         }
 
         //Check to see if user input is valid
@@ -61,9 +67,16 @@ namespace WebAppDemo
                 conn.Open();
                 queryStr = "";
 
-                queryStr = "SELECT * FROM `userregistration` WHERE `username` = '" + usernameTextBox.Text + "' AND `password`='" + passwordTextBox.Text + "'";
+
+                //Adding place holders to prevent sql injection
+
+                queryStr = "SELECT * FROM `userregistration` WHERE `username`=?uname AND `password`=?pword";
 
                 cmd = new MySql.Data.MySqlClient.MySqlCommand(queryStr, conn);
+
+                //Treats user inputs as an actual string instead of a query
+                cmd.Parameters.AddWithValue("?uname", usernameTextBox.Text);
+                cmd.Parameters.AddWithValue("?pword", passwordTextBox.Text);
 
                 reader = cmd.ExecuteReader();
 
