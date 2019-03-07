@@ -7,13 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace WebAppDemo
 {
-    public partial class Registration : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        protected void registerEventMethod(object sender, EventArgs e)
+        protected void SubmitEventMethod(object sender, EventArgs e)
         {
 
         }
