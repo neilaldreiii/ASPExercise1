@@ -21,6 +21,9 @@
                 <asp:TextBox ID="LastnameTextBox" Text="Last Name" runat="server" />
             </div>
             <div class="form-group">
+                <asp:TextBox ID="EmailTextBox" Text="Email" runat="server" />
+            </div>
+            <div class="form-group">
                 <asp:TextBox ID="PhonenumberTextBox" Text="Phone Number" runat="server" />
             </div>
             <div class="form-group">
